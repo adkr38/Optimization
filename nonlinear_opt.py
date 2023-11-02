@@ -22,7 +22,13 @@ class Q1():
 
 
     @staticmethod
-    def get_plotting_constraints() -> List[Tuple[Callable[[float,float],bool],str]]:
+    def get_plotting_constraints() -> List[Tuple[Callable[[float,float],float],str]]:
+        return [
+                (lambda x,y: 10 -  x**2+y**2,"x**2 + y**2 <= 10")
+                ]
+
+    @staticmethod
+    def get_constraints() -> List[Tuple[Callable[[float,float],bool],str]]:
         return [
                 (lambda x,y: x**2+y**2 <= 10,"x**2 + y**2 <= 10")
                 ]
@@ -30,7 +36,7 @@ class Q1():
     @staticmethod
     def get_feasible_points() -> List[Tuple[float,float]]:
         feasible_points = list()
-        constraints = Q1.get_plotting_constraints()
+        constraints = Q1.get_constraints()
         for x in range(-10,11):
             for y in range(-10,11):
                 if all(list(map(lambda constraint: constraint[0](x,y),constraints))):
