@@ -15,6 +15,6 @@ Linear optimization involves finding the best outcome in a mathematical model wh
 
 
 ### Problem: Maximize Z = x**2 + y**2
-**Subject to:** \( x**2 + y**2 <= 10;\)
+**Subject to:** \( x^2 + y^2 <= 10;\)
 
 ![Nonlinear Optimization Plot](images/nonlin_q1.png "")
